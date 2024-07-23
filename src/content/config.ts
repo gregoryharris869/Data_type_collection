@@ -1,29 +1,26 @@
 import { defineCollection, reference, z } from "astro:content";
+import postSchema from "../Schemas/postSchema";
+import roleSchema from "../Schemas/roleSchema";
+import teamSchema from "../Schemas/teamSchema";
+
 
 const team = defineCollection({
   type: "data",
-  schema: z.object({
-    name: z.string(),
-    role: z.enum(["Marketing", "Dev", "Design"]),
-    location: z.string().optional(),
-  }),
+  schema:teamSchema,
 });
 
-
+const role = defineCollection({
+  type: "data",
+  schema:roleSchema,
+});
 
 const posts = defineCollection({
   type: "content",
-  schema: z.object({
-    title: z.string().max(65, { message: "Must be 65 characters or less" }),
-    tags: z.array(z.string()),
-    pubDate: z.string(),
-    isDraft: z.boolean(),
-    canonicalURL: z.string().url().optional(),
-    author:reference("team"),
-  }),
+  schema: postSchema,
 });
 
 export const collections = {
   team,
   posts,
+  role,
 };
