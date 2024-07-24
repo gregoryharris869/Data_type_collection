@@ -1,11 +1,10 @@
 ---
-title: Post 1
+title: Post 3
 tags: ["product", "tutorial"]
 pubDate: 2023-12-08
 isDraft: false
-canonicalURL: https://mysite.com/sample/
-author: christina
-cover: ./images/post-1.jpg
+author: mario
+cover: ./images/post-3.jpg
 coverAlt: "laptop at night"
 ---
 

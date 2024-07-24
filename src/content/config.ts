@@ -1,17 +1,16 @@
 import { defineCollection, reference, z } from "astro:content";
-import postSchema from "../Schemas/postSchema";
-import roleSchema from "../Schemas/roleSchema";
-import teamSchema from "../Schemas/teamSchema";
-
+import postSchema from "../schemas/postSchema";
+import roleSchema from "../schemas/roleSchema";
+import teamSchema from "../schemas/teamSchema";
 
 const team = defineCollection({
   type: "data",
-  schema:teamSchema,
+  schema: teamSchema,
 });
 
 const role = defineCollection({
   type: "data",
-  schema:roleSchema,
+  schema: roleSchema,
 });
 
 const posts = defineCollection({
